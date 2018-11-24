@@ -10,6 +10,7 @@ module.exports = {
   // }
 
   afterInstall(options) {
+    this.ui.writeLine('after install')
     if (!options.dryRun && options.torii && isPackageMissing(this, 'torii')) {
       return this.addPackagesToProject({
         packages: [
