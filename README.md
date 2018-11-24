@@ -1,7 +1,7 @@
 ember-simple-auth-keycloak
 ==============================================================================
 
-[Short description of the addon.]
+Adds keycloak authenticators for ember-simple-auth and torii
 
 Installation
 ------------------------------------------------------------------------------
@@ -14,8 +14,31 @@ ember install ember-simple-auth-keycloak
 Usage
 ------------------------------------------------------------------------------
 
-[Longer description of how to use the addon in apps.]
+1. Add to configuration 
+```
+//config/environment.js
 
+   torii: {
+      sessionServiceName: 'session',
+      providers: {
+        'keycloak-oauth-implicit':{
+          redirectUri: 'http://localhost:4200/torii/redirect.html',
+          clientId: 'hackathon',
+          realmName: 'Hackathons',
+          baseUrl: 'http://localhost:8080/auth/realms/Hackathons/protocol/openid-connect/auth',
+        }
+      }
+    },
+```
+
+2. Use as you work torii:
+```
+//controller.js
+
+this.get('session').authenticate('authenticator:keycloak', {
+    provider: 'keycloak-oauth-implicit'
+})
+```
 
 Contributing
 ------------------------------------------------------------------------------
