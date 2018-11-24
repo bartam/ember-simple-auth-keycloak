@@ -22,6 +22,10 @@
     "test": "ember test",
     "test:all": "ember try:each"
   },
+  "repository":{
+    "type":"git",
+    "url": "https://github.com/bartam/ember-simple-auth-keycloak"
+  },
   "dependencies": {
     "ember-cli-babel": "^6.6.0",
     "ember-simple-auth": "^1.7.0",
