@@ -1,6 +1,6 @@
 {
   "name": "ember-simple-auth-keycloak",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Keycloak for ember-simple-auth and torii.",
   "keywords": [
     "ember-addon",
